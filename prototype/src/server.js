@@ -3,6 +3,7 @@ var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
+var firebase = require("firebase");
 
 app.get('/scrape', function(req, res){
 
@@ -32,5 +33,15 @@ app.get('/scrape', function(req, res){
 app.listen('8081')
 
 console.log('Magic happens on port 8081');
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD8xLpytjciDuIWFSPTGH4MyByWQG7ccAo",
+    authDomain: "athleteappprototype2.firebaseapp.com",
+    databaseURL: "https://athleteappprototype2.firebaseio.com",
+    storageBucket: "athleteappprototype2.appspot.com",
+    messagingSenderId: "539252932098"
+  };
+  firebase.initializeApp(config);
 
 exports = module.exports = app;
